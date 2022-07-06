@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>GraphAlgoritms</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.0.0.1909" />
+    <PackageReference Include="WPF.JoshSmith.Controls.DragCanvas" Version="2.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphAlgoritms.Modules.Algoritms\GraphAlgoritms.Modules.Algoritms.csproj" />
+    <ProjectReference Include="..\GraphAlgoritms.Modules.GraphElements\GraphAlgoritms.Modules.Elements.csproj" />
+    <ProjectReference Include="..\GraphAlgoritms.Modules.Graph\GraphAlgoritms.Modules.Graph.csproj" />
+  </ItemGroup>
+</Project>

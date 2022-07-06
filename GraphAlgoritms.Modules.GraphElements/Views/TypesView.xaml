@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="GraphAlgoritms.Modules.Elements.Views.TypesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+             xmlns:local="clr-namespace:GraphAlgoritms.Modules.Elements.Views">
+
+    <ListBox ItemsSource="{Binding ActiveTypeViewModels, UpdateSourceTrigger=PropertyChanged}" ScrollViewer.CanContentScroll="True">
+        <i:Interaction.Triggers>
+            <i:EventTrigger EventName="SelectionChanged">
+                <i:InvokeCommandAction Command="{Binding RelativeSource={
+                                                                 RelativeSource FindAncestor, 
+                                                                 AncestorType=ListBox}, 
+                                                             Path=DataContext.TypeSelectedCommand}"
+                                           CommandParameter="{Binding RelativeSource={
+                                                                          RelativeSource FindAncestor,
+                                                                          AncestorType=ListBox}, 
+                                                                      Path=SelectedItem}"/>
+            </i:EventTrigger>
+        </i:Interaction.Triggers>
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                    <Label Content="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+                    <Image Source="{Binding ImagePath, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+
+        <!--<ContentControl Template="{StaticResource graphCommandTemplate}"/>-->
+    </ListBox>
+</UserControl>

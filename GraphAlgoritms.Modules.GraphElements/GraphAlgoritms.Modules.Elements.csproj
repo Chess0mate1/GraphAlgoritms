@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows7.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>GraphAlgoritms.Modules.GraphElements</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\AStar.png" />
+    <None Remove="Resources\BreadthFirstSearch.png" />
+    <None Remove="Resources\DepthFirstSearch.png" />
+    <None Remove="Resources\Dijkstra.png" />
+    <None Remove="Resources\Edge.png" />
+    <None Remove="Resources\Move.png" />
+    <None Remove="Resources\Node.png" />
+    <None Remove="Resources\Weight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GraphAlgoritms.Business\GraphAlgoritms.Business.csproj" />
+    <ProjectReference Include="..\GraphAlgoritms.Core\GraphAlgoritms.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AStar.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\BreadthFirstSearch.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\DepthFirstSearch.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Dijkstra.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Edge.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Move.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Node.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Weight.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+</Project>

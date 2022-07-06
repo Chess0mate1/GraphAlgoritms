@@ -1,0 +1,42 @@
+﻿<Window x:Class="GraphAlgoritms.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        prism:ViewModelLocator.AutoWireViewModel="True" 
+        xmlns:core="clr-namespace:GraphAlgoritms.Core;assembly=GraphAlgoritms.Core"
+        xmlns:c="clr-namespace:GraphAlgoritms.Core.Converters;assembly=GraphAlgoritms.Core"
+        Title="{Binding Title}" ResizeMode="NoResize" WindowState="Maximized" >
+    <Window.Resources>
+        <c:KeyToAlgoritmExecuteTypeConverter x:Key="KtAETconverter"/>
+    </Window.Resources>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="KeyUp">
+            <i:InvokeCommandAction Command="{Binding AlgoritmExecuteCommand}"  
+                                   PassEventArgsToCommand="True"
+                                   EventArgsConverter="{StaticResource KtAETconverter}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+
+        <ContentControl Grid.Row="1" Grid.Column="0" 
+            prism:RegionManager.RegionName="{x:Static core:RegionNames.ElementTypesRegion}" />
+        <ContentControl Grid.Row="1" Grid.Column="1" 
+            prism:RegionManager.RegionName="{x:Static core:RegionNames.GraphRegion}" />
+        <ContentControl Grid.Row="1" Grid.Column="2" 
+            prism:RegionManager.RegionName="{x:Static core:RegionNames.AlgoritmsRegion}" />
+
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Элементы"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Графы"/>
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Алгоритмы"/>
+    </Grid>
+</Window>
